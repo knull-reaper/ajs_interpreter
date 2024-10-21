@@ -1,0 +1,19 @@
+
+
+function fib(n) {
+    // Base Case: If n is 0, return 0
+    if (n == 0) {
+        return 0;
+    }
+    // Base Case: If n is 1, return 1
+    else if (n == 1) {
+        return 1;
+    }
+    // Recursive Case: fib(n - 1) + fib(n - 2)
+    else {
+        return fib(n - 1) + fib(n - 2);
+    }
+}
+
+fib(4);
+fib(8);
