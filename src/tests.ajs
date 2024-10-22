@@ -1,14 +1,14 @@
 
 print "|---Recursion Checks---|";
 // first only this line
-function fib(n) { if (n == 0) { return 0; } else if (n == 1) { return 1; } else { return fib(n - 1) + fib(n - 2); }}
+function fib(n) { if (n === 0) { return 0; } else if (n === 1) { return 1; } else { return fib(n - 1) + fib(n - 2); }}
 
 // run both of the lines below separately
 fib(4);
 fib(8);
 
 // same as above
-function factorial(n) { if (n == 1) return 1; return n * factorial(n - 1);}
+function factorial(n) { if (n === 1) return 1; return n * factorial(n - 1);}
 
 // same as above
 factorial(4);
@@ -16,11 +16,11 @@ factorial(8);
 
 //Boolean Checks
 print "|---Boolean Checks---|";
-(3 > 2) and (5 < 9); (3 > 2) and (5 > 9); (3 > 2) or (5 > 9); (3 < 2) or (5 < 9);
+(3 > 2) && (5 < 9); (3 > 2) && (5 > 9); (3 > 2) || (5 > 9); (3 < 2) || (5 < 9);
 
 
 function abs(x) { if (x >= 0) return x; return -x; }
-function abs2(x) { if (x > 0) return x; if (x == 0) return 0; return -x;}
+function abs2(x) { if (x > 0) return x; if (x === 0) return 0; return -x;}
 function close_enough(x, y) { return abs(x - y) < 0.001;}
 
 abs(6);
