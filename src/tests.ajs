@@ -1,19 +1,50 @@
 
+print "|---Recursion Checks---|";
+// first only this line
+function fib(n) { if (n == 0) { return 0; } else if (n == 1) { return 1; } else { return fib(n - 1) + fib(n - 2); }}
 
-function fib(n) {
-    // Base Case: If n is 0, return 0
-    if (n == 0) {
-        return 0;
-    }
-    // Base Case: If n is 1, return 1
-    else if (n == 1) {
-        return 1;
-    }
-    // Recursive Case: fib(n - 1) + fib(n - 2)
-    else {
-        return fib(n - 1) + fib(n - 2);
-    }
-}
-
+// run both of the lines below separately
 fib(4);
 fib(8);
+
+// same as above
+function factorial(n) { if (n == 1) return 1; return n * factorial(n - 1);}
+
+// same as above
+factorial(4);
+factorial(8);
+
+//Boolean Checks
+print "|---Boolean Checks---|";
+(3 > 2) and (5 < 9); (3 > 2) and (5 > 9); (3 > 2) or (5 > 9); (3 < 2) or (5 < 9);
+
+
+function abs(x) { if (x >= 0) return x; return -x; }
+function abs2(x) { if (x > 0) return x; if (x == 0) return 0; return -x;}
+function close_enough(x, y) { return abs(x - y) < 0.001;}
+
+abs(6);
+abs(-5);
+abs(0);
+abs2(10);
+abs2(-33);
+abs2(0);
+close_enough(12.0003, 12);
+close_enough(12.1, 12);
+
+print "|---Function Declaration Checks---|";
+
+function square(x) { return x * x;}
+
+square(21);
+square(4 + 2);
+square(3) + square(4);
+
+print "|---Compound Function Checks---|";
+square(square(3));
+
+function sum_of_squares(x, y) { return square(x) + square(y);}
+function f(a) {return( sum_of_squares(a + 1, a * 2));}
+f(5);
+
+
