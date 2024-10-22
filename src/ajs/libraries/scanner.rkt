@@ -69,6 +69,16 @@
              (while (and (not (next-is? s #\newline)) (not (at-end? s)))
                     (advance! s)) 
              (add-token! s  SLASH))]
+    [#\& (if (matches? s #\&)
+       (begin
+         (add-token! s AND)
+         (void))
+       (void))]
+    [#\| (if (matches? s #\|)
+       (begin
+         (add-token! s OR)
+         (void))
+       (void))]
     [#\newline (scanner-next-line! s)] ;; increment line number
     [(? char-blank?) (void)] ;; ignore whitespace
     [#\" (scan-string! s)] ;; string literals
