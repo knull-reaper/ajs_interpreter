@@ -62,7 +62,7 @@
     [#\; (add-token! s SEMICOLON)]
     [#\* (add-token! s STAR)]
     [#\! (add-token! s (if (matches? s #\=) BANG_EQUAL BANG))]
-    [#\= (add-token! s (if (matches? s #\=) EQUAL_EQUAL EQUAL))]
+    [#\= (add-token! s (if (matches? s #\=) (if (matches? s #\=) EQUAL_EQUAL EQUAL_EQUAL) EQUAL))]
     [#\< (add-token! s (if (matches? s #\=) LESS_EQUAL LESS))]
     [#\> (add-token! s (if (matches? s #\=) GREATER_EQUAL GREATER))]
     [#\/ (if (matches? s #\/)

@@ -149,23 +149,19 @@
 
 
 (: evaluate (-> Interpreter Expr Any))
-(define (evaluate interpreter expr)
-  (match expr
-    [(list 'ternary condition then-branch else-branch)
-     (if (truthy? (evaluate interpreter condition))
-         (evaluate interpreter then-branch)
-         (evaluate interpreter else-branch))]
-    [(literal? expr) (eval-literal interpreter expr)]
-    [(variable? expr) (eval-variable-expression interpreter expr)]
-    [(assign? expr) (eval-assign interpreter expr)]
-    [(grouping? expr) (eval-grouping interpreter expr)]
-    [(unary? expr) (eval-unary interpreter expr)]
-    [(call? expr) (eval-call interpreter expr)]
-    [(get? expr) (eval-get interpreter expr)]
-    [(set-expr? expr) (eval-set-expr interpreter expr)]
-    [(super-expr? expr) (eval-super-expr interpreter expr)]
-    [(this-expr? expr) (eval-this-expr interpreter expr)]
-    [(binary? expr) (eval-binary interpreter expr)]))
+(define (evaluate i expr)
+  (cond
+    [(literal? expr) (eval-literal i expr)]
+    [(variable? expr) (eval-variable-expression i expr)]
+    [(assign? expr) (eval-assign i expr)]
+    [(grouping? expr) (eval-grouping i expr)]
+    [(unary? expr) (eval-unary i expr)]
+    [(call? expr) (eval-call i expr)]
+    [(get? expr) (eval-get i expr)]
+    [(set-expr? expr) (eval-set-expr i expr)]
+    [(super-expr? expr) (eval-super-expr i expr)]
+    [(this-expr? expr) (eval-this-expr i expr)]
+    [(binary? expr) (eval-binary i expr)]))
 
 (: eval-literal (-> Interpreter LiteralExpr Any))
 (define (eval-literal i expr)
