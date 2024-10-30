@@ -1,1 +1,1 @@
-a custom fork of racket-lox for a university project
+a custom fork of javascript for a university project
