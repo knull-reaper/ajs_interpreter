@@ -11,7 +11,6 @@ A custom fork of JavaScript implemented for a university project. This interpret
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Overview
