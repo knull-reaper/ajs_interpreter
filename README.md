@@ -109,7 +109,4 @@ Contributions are welcome! To contribute:
 
 Please open an issue if you have any questions or suggestions before starting work on a new feature.
 
-## Contact
-
-For any questions or feedback, please open an issue in this repository or contact **knull-reaper** directly.
 ```
